@@ -1,0 +1,24 @@
+.card-container{
+  background-color: #F2F2F6;
+}
+
+.contain{
+  color: black;
+  padding-inline: 20px;
+  cursor: pointer;
+  margin: 10px;
+  background-color: white;
+  border-radius: 6px;
+  width: 100%;
+}
+.contain img{
+  width: 15vh;
+  background-color: white;
+  padding: 5px;
+  height: 15vh;
+  border-radius: 50%;
+}
+.card-content{
+  margin-top: 10px;
+  text-align: center;
+}

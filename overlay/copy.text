@@ -1,0 +1,32 @@
+
+
+    <script src="assets/js/scripts.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var forms = document.querySelectorAll('form');
+            forms.forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    var formData = new FormData(form); // Create FormData object
+
+                    // Send formData to PHP script via AJAX
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'insert.php', true);
+                    xhr.onload = function() {
+                        if (xhr.status == 200) {
+                            console.log(xhr.responseText);
+                            // Optionally, you can display a success message or redirect the user
+                        } else {
+                            console.error('Error:', xhr.statusText);
+                            // Optionally, you can display an error message
+                        }
+                    };
+                    xhr.onerror = function() {
+                        console.error('Request failed');
+                        // Optionally, you can display an error message
+                    };
+                    xhr.send(formData);
+                });
+            });
+        });
+    </script>
